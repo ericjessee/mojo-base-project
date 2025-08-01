@@ -27,6 +27,21 @@ assign spi_miso = 1'bz;
 assign avr_rx = 1'bz;
 assign spi_channel = 4'bzzzz;
 
-assign led = 8'b0;
+wire sm83_halt;
+assign led[0] = sm83_halt;
+
+wire sm83_wen;
+assign led[7] = sm83_wen;
+
+sm83_top sm83_top (
+	.clk(clk),
+	.rst_n(rst_n),
+	.r_data(),
+	.w_data(),
+	.r_addr(),
+	.w_addr(),
+	.w_wen(sm83_wen),
+	.halt(sm83_halt)
+);
 
 endmodule
