@@ -20,7 +20,7 @@ module mojo_top(
     input avr_rx_busy, // AVR Rx buffer full
 
     //sm83 outside connections
-    output [7:0] addr,
+    output [15:0] addr,
     output [7:0] r_data,
     output [7:0] w_data
 
